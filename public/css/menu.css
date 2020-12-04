@@ -1,0 +1,31 @@
+.personal{
+    width:150px;
+    height:30px;
+    line-height: 30px;
+    text-align:center;
+    border-bottom:1px solid #333;
+}
+
+.left{
+    width:150px;
+    height:auto;
+    float: left;
+    border:1px solid #333;
+}
+
+.menu{
+    width: 150px;
+}
+
+.menu li{
+    margin-left:50px;
+}
+
+.menu-tag{
+    list-style: disc;
+    color:#333;
+}
+
+.menu a{
+    color: #999;
+}

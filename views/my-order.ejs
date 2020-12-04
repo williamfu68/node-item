@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/goods-list.css">
+    <link rel="stylesheet" href="/css/myorder.css">
+    <script src="/js/jquery-1.11.1.js"></script>
+
+</head>
+<%- include('ywk-header') -%>
+<div class="container">
+    <div class="left fl">
+        <p>个人中心</p>
+        <ul class="left-list">
+            <li><a class="li-title" href="">我的交易</a></li>
+            <li><a href="">我的订单</a></li>
+            <li><a class="li-title" href="">用户管理</a></li>
+            <li><a href="">农场主列表</a></li>
+            <li><a href="">村站列表</a></li>
+            <li><a href="">用户订单</a></li>
+            <li><a class="li-title" href="">我的服务</a></li>
+            <li><a href="">大客户认证</a></li>
+            <li><a class="li-title" href="">我的关注</a></li>
+            <li><a href="">关注的品牌</a></li>
+            <li><a class="li-title" href="">我的资产</a></li>
+            <li><a href="">我的佣金</a></li>
+            <li><a href="">我的余额</a></li>
+            <li><a href="">我的红包</a></li>
+            <li><a href="">云农宝</a></li>
+            <li><a href="">丰收汇补贴</a></li>
+            <li><a href="">我的贷款</a></li>
+            <li><a href="">我的银行卡</a></li>
+            <li><a class="li-title" href="">设置</a></li>
+            <li><a href="">账号信息</a></li>
+            <li><a href="">个人资料</a></li>
+            <li><a href="">农场信息</a></li>
+            <li><a href="">收货地址</a></li>
+            <li><a href="">安全设置</a></li>
+            <li><a href="">服务站信息</a></li>
+            <li><a class="li-title" href="">账号关联</a></li>
+            <li><a href="">云农宝绑定</a></li>
+        </ul>
+    </div>
+    <div class="right fl">
+        <h4 class="my-order">我的订单</h4>
+        <div class="saixuan">
+            <div class="all">全部订单</div>
+            <div class="curState">待支付</div>
+            <div class="curState">待发货</div>
+            <div class="curState">待收货</div>
+            <div class="curState">已收货</div>
+        </div>
+        <table cellpadding='0' cellspacing='0'>
+            <tr>
+                <th class="td-l">近三个月订单</th>
+                <th>订单详情</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>总计</th>
+                <th>全部状态</th>
+                <th class="td-r">操作</th>
+            </tr>
+            <tr class="add">
+                <td class="td-title" colspan="7"></td>
+            </tr>
+
+        </table>
+        <script>
+            $(function () {
+                $('.all').on('click', function () {
+                    getList();
+                })
+
+                function state() {
+                    $('.curState').on('click', function () {
+                        var state = $(this).text();
+                        console.log(state);
+                        $.ajax({
+                                url: '/myorder/state',
+                                method: 'GET',
+                                data: {
+                                    state: state
+                                }
+                            })
+                            .done(function (res) {
+                                console.log(res.data);
+                                render(res.data);
+                            })
+                            .fail(function (err) {
+                                console.log(err)
+                            });
+                    })
+                }
+                state();
+
+                function getList() {
+                    $.ajax({
+                            url: '/myorder/list',
+                            method: 'GET'
+                        })
+                        .done(function (res) {
+                            render(res.data);
+                        })
+                        .fail(function (err) {
+                            console.log(err)
+                        });
+                }
+                getList();
+
+                function render(data) {
+                    var list = data.list;
+                    var face = data.face;
+                    $('.add').nextAll().empty();
+                    var ran = Math.ceil(Math.random() * 10);
+                    for (var i = 0; i < list.length; i++) {
+                        var $item = `
+                        <tr>
+                            <td class="td-l">${list[i].buy_date}</td>
+                            <td>订单号：${list[i].o_id}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="td-r">
+                                <a id='del' class="del" oid=${list[i].o_id}></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-l">
+                                <img src="${face[i].g_face}" alt="">
+                            </td>
+                            <td>
+                                ${face[i].g_name}
+                            </td>
+                            <td>￥ ${list[i].pay_price}</td>
+                            <td>${ran}</td>
+                            <td>￥ ${list[i].pay_price * ran}</td>
+                            <td>
+                                <p class='cp'>${list[i].state}</p>
+                                <input class='state' type='hidden' value ='${list[i].state}'>
+                                <p><a href='/order-detail?id=${list[i].o_id}'>订单详情</a></p>
+                            </td>
+                            <td id='again' gid = '${list[i].g_id}' class="td-r"></td>
+                        </tr>
+                        <tr>
+                            <td class='kb' colspan='7'></td>
+                        </tr>
+                        `;
+                        $('.add').after($item);
+                        var s1 = $('.cp').text();
+                        var s2 = '待支付';
+                        if (list[i].cnt_price == null) {
+                            $('#del').text('取消订单');
+                            if( list[i].state == '待发货' ) {
+                                $('#again').text(' ');
+                            } else {
+                                $('#again').text('去支付');
+                            }
+                        } else if( list[i].state == '待收货' ) {
+                            $('#del').text(' ');
+                            $('#again').text(' ');
+                        }else {
+                            $('#del').text('删除');
+                            $('#again').text('再次购买');
+                        }
+                        if( $('#again').text() == '再次购买' ) {
+                            $('#again').on('click',function() {
+                                var id = $(this).attr('gid');
+                                window.location.href = '/detail?id='+id+'';
+                            });
+                        }
+                        console.log(ran);
+                    }
+
+                    $('.del').on('click', function () {
+                        var id = $(this).attr('oid');
+                        if ($(this).text() == '取消订单') {
+                            $.ajax({
+                                    url: '/myorder/del',
+                                    method: 'GET',
+                                    data: {
+                                        id: id
+                                    }
+                                })
+                                .done(function (res) {
+                                    alert(res.tip);
+                                    location.reload();
+                                })
+                                .fail(function (err) {
+                                    console.log(err);
+                                })
+                        } else {
+                            console.log(id);
+                            $.ajax({
+                                    url: '/myorder/del',
+                                    method: 'GET',
+                                    data: {
+                                        id: id
+                                    }
+                                })
+                                .done(function (res) {
+                                    alert(res.msg);
+                                    location.reload();
+                                })
+                                .fail(function (err) {
+                                    console.log(err);
+                                })
+                        }
+                    });
+                }
+
+            })
+        </script>
+    </div>
+</div>
+</body>
+</html>

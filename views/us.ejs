@@ -1,0 +1,387 @@
+<%- include('doctype') -%>
+
+    <style>
+        .body {
+            padding: 40px 100px;
+            background-color: #fff;
+            min-height: 410px;
+        }
+        
+        .us-form {
+            padding: 20px 60px 40px;
+            border: 1px solid #454748;
+        }
+        
+        .form-group {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .form-group input {
+            width: 220px;
+            outline: none;
+            height: 35px;
+            border: 1px solid #d6d6d6;
+            padding: 3px 6px;
+            box-sizing: border-box;
+            caret-color: teal;
+            transition: all .3s;
+        }
+        
+        .form-group input[type="checkbox"] {
+            width: auto;
+            height: auto;
+            vertical-align: middle;
+        }
+        
+        .form-group input:focus {
+            border-color: lightseagreen;
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+        }
+        
+        .type {
+            display: inline-block;
+        }
+        
+        #other-type {
+            margin-left: 30px;
+        }
+        
+        #detailAddr {
+            flex: 0;
+        }
+        
+        .distpicker {
+            display: inline-block;
+        }
+        
+        .distpicker select {
+            height: 30px;
+            line-height: 30px;
+            width: 32%;
+            outline: none;
+            cursor: pointer;
+            border: 1px solid #d6d6d6;
+            transition: all .3s;
+            color: #666;
+        }
+        
+        .distpicker select:focus {
+            border-color: lightseagreen;
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+        }
+        
+        .switch {
+            display: block;
+            max-width: 800px;
+            border-top: 0;
+            box-sizing: border-box;
+        }
+        
+        .switch-tags {
+            border: 1px solid #ccc;
+        }
+        
+        .switch-tags li {
+            float: left;
+            width: 50%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .switch .active {
+            color: #000;
+            background-color: #f0f0f0;
+        }
+        
+        .switch-content {
+            min-height: 250px;
+            box-sizing: border-box;
+            padding: 30px 20px 30px;
+            border: 1px solid #778899;
+            border-top: 0;
+        }
+        
+        .switch-content:last-child {
+            display: none;
+        }
+        
+        .check-btn,
+        .save-btn {
+            width: 120px;
+            height: 35px;
+            line-height: 35px;
+            outline: none;
+            border: 1px solid #d6d6d6;
+            background-color: #f0f0f0;
+            transition: all .3s;
+        }
+        
+        .check-btn:hover,
+        .save-btn:hover {
+            cursor: pointer;
+            background-color: #d5e1e1;
+        }
+        
+        .save-btn {
+            width: 240px;
+            margin: 30px 0 0 280px;
+        }
+        
+        .order-address {
+            padding: 0 24px;
+        }
+        
+        .order-address-title {
+            font-size: 18px;
+            padding-top: 32px;
+        }
+        
+        .order-address-list {
+            margin-top: 16px;
+        }
+        
+        .order-address-list li {
+            float: left;
+        }
+        
+        .order-address-box {
+            position: relative;
+            border: 1px solid #00c3f5;
+            border-radius: 2px;
+            padding: 0 16px;
+            margin-bottom: 30px;
+            width: 288px;
+            height: 148px;
+            box-sizing: border-box;
+            transition: all .3s;
+        }
+        
+        .order-address-box:hover {
+            border: 1px solid #00c3f5;
+        }
+        
+        .secondary {
+            margin-left: 12px;
+            border: 1px solid #EFEFEF;
+        }
+        
+        .order-box-top {
+            height: 45px;
+            line-height: 45px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .order-box-top .tel {
+            float: right;
+        }
+        
+        .order-box-content {
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            max-height: 70px;
+            color: #595959;
+        }
+        
+        .order-box-checked {
+            position: absolute;
+            right: 1px;
+            bottom: 1px;
+            zoom: 1.2;
+        }
+        
+        .order-box-option {
+            position: absolute;
+            right: 0;
+            bottom: -25px;
+            font-size: 14px;
+        }
+        
+        .order-box-option span {
+            color: #00c3f5;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all .1s;
+            text-decoration: underline;
+        }
+        
+        .order-add-icon {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #bdbdbd;
+            margin: 50px auto 10px;
+        }
+        
+        .order-add-icon::before,
+        .order-add-icon::after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+        }
+        
+        .order-add-icon::before {
+            width: 16px;
+            height: 4px;
+        }
+        
+        .order-add-icon::after {
+            width: 4px;
+            height: 16px;
+        }
+        
+        .order-add-text {
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+        
+        .tips {
+            color: #c90000;
+        }
+    </style>
+
+    <%- include('headbody') -%>
+
+        <%- include('header') -%>
+            <!-- body -->
+            <div class="body">
+                <form class="us-form" autocomplete="off">
+                    <div class="form-group">
+                        <label>
+                        <span>真实姓名：</span>
+                        <input type="text" name = "name" id = "name" required>
+                    </label>
+                        <label>
+                        <span>身份证号：</span>
+                        <input type="number" name = "IDNumber" id = "IDNumber">
+                    </label>
+                        <label>
+                        <span>出生日期：</span>
+                        <input type="date" name = "birthday" id="birthday">
+                    </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>农场面积：</span>
+                            <input type="text" name = "area" id = "area">
+                        </label>
+                        <div>
+                            <span>种植种类：</span>
+                            <div class="type">
+                                <label>
+                                    <input type="checkbox" name = "xiaomai" id = "xiaomai">
+                                    <span>小麦</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="yumi" id="yumi">
+                                    <span>玉米</span>   
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="dadou" id="dadou">
+                                    <span>大豆</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="mianhua" id="mianhua">
+                                    <span>棉花</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="huasheng" id="huahsneg">
+                                    <span>花生</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="shuidao" id="shuidao">
+                                    <span>水稻</span>
+                                </label>
+                                <input type="text" name="other-type" id="other-type" placeholder="其他种植作物">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                        <span>收货地址：</span>
+                        <div data-toggle="distpicker" class="distpicker distpicker-one">
+                            <select data-province="四川省"></select>
+                            <select data-city="成都市"></select>
+                            <select data-district="武侯区"></select>
+                        </div>
+                        <input type="text" name="detailAddr" id="detailAddr" placeholder="详细地址">
+                    </label>
+                    </div>
+                    <div class="form-group switch">
+                        <ul class="switch-tags clear">
+                            <li class="active">地址选择</li>
+                            <li>编号选择</li>
+                        </ul>
+                        <div class="switch-content">
+                            <div class="form-group">
+                                <label>
+                                <span>服务村站地址：</span>
+                                <div data-toggle="distpicker" class="distpicker distpicker-two">
+                                    <select data-province="四川省"></select>
+                                    <select data-city="成都市"></select>
+                                    <select data-district="武侯区"></select>
+                                </div>
+                                <input type="text" name="villageAddr" id="villageAddr" placeholder="详细地址">
+                            </label>
+                            </div>
+                            <div class="form-group">
+                                <!-- order-address -->
+                                <div class="order-address">
+                                    <div class="order-address-title">详细信息</div>
+                                    <div class="order-address-list">
+                                        <ul class="clear">
+                                            <li>
+                                                <div class="order-address-box">
+                                                    <div class="order-box-top">
+                                                        <span class="name">姓名：张三</span>
+                                                        <span class="tel">编号：108556</span>
+                                                    </div>
+                                                    <div class="order-box-content">
+                                                        电话：186*****487
+                                                    </div>
+                                                    <input type="checkbox" checked class="order-box-checked">
+                                                    <div class="order-box-option">
+                                                        <span>修改</span>
+                                                        <span>删除</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="order-address-box secondary">
+                                                    <div class="order-add-icon"></div>
+                                                    <div class="order-add-text">添加新地址</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p class="tips">请核实您的村级服务站信息，如果不合适，您可更改您的住址进行更改</p>
+                            </div>
+                        </div>
+                        <div class="switch-content">
+                            <div class="form-group">
+                                <label>
+                                <span>输入您所在村站的编号：</span>
+                                <input type="number" name="villageNumber" id="villageNumber">
+                                <button type = "button" class = "check-btn" id = "check-btn">检测编号</button>
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="save-btn">保存</button>
+                </form>
+            </div>
+
+            <%- include('footer') -%>

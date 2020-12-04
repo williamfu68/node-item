@@ -1,0 +1,146 @@
+        <%- include('ly-header') -%>
+        <%- include('menu') -%>
+            <div class="content">
+                <div class="intro">
+                    <span>农场总面积：100 亩</span>
+                    <span>种植种类：小麦,玉米,大豆,棉花,花生</span>
+                    <span class="update">修改农场信息</span>
+                </div> 
+                
+                <div class="updatePage">
+                    <div class="options">
+                        <label>种植种类：</label>
+                        <input type="checkbox">小麦
+                        <input type="checkbox">玉米
+                        <input type="checkbox">大豆
+                        <input type="checkbox">棉花
+                        <input type="checkbox">花生
+                        <input type="checkbox">水稻
+                    </div>
+                    <div class="other">
+                        <input type="text" placeholder="或其他种植作物">
+                    </div>
+                    <div class="operation">
+                        <span class="update-save">保存</span>
+                        <span class="update-cancel">取消</span>
+                    </div>
+                </div>
+
+                <div class="updateSuccess">
+                    <span>农场信息修改成功</span>
+                </div>
+
+
+                <div class="addPage">
+                    <div class="options">
+                        <label>种植种类：</label>
+                        <input type="text">
+                    </div>
+                    
+                    <div class="options">
+                        <label>种植面积：</label>
+                        <input type="text">亩
+                    </div>
+                    
+                    <div class="options">
+                        <label>地理位置：</label>
+                        <select>
+                            <option value="">位于村东</option>
+                            <option value="">位于村西</option>
+                            <option value="">位于村南</option>
+                            <option value="">位于村北</option>
+                        </select>
+                        <input type="number">米
+                    </div>
+                    <div class="operation">
+                        <span class="add-save">保存</span>
+                        <span class="add-cancel">取消</span>
+                    </div>
+                </div>
+
+                <div class="addSuccess">
+                    <span>农场片区信息修改成功</span>
+                </div>
+
+                <div class="add-farm">
+                    <span>添加农场</span>
+                </div>
+
+                <div class="farm-content">
+                    <table>
+                        <tr>
+                            <th>地理位置</th>
+                            <th>种植种类</th>
+                            <th>面积（亩）</th>
+                            <th>测土状态</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr>
+                            <td>村东100米</td>
+                            <td>小麦</td>
+                            <td>200</td>
+                            <td>未申请</td>
+                            <td>申请
+                                <span>修改</span>
+                                <span>删除</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>村西200米</td>
+                            <td>玉米</td>
+                            <td>111</td>
+                            <td>已完成</td>
+                            <td>查看测土报告
+                                <span>修改</span>
+                                <span>删除</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer') -%>
+    
+    <script src="/js/jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            $('.update').on('click',function(){
+                $('.updatePage').css({'display':'block'});
+            });
+
+            $('.update-cancel').on('click',function(){
+                $('.updatePage').css({'display':'none'});
+            });
+
+            $('.update-save').on('click',function(){
+                $('.updatePage').css({'display':'none'});
+                $('.updateSuccess').css({'display':'block'});
+
+                setTimeout(function(){
+                    $('.updateSuccess').css({'display':'none'});
+                },1000);
+            });
+
+
+            $('.add-farm').on('click',function(){
+                $('.addPage').css({'display':'block'});
+            });
+
+            $('.add-cancel').on('click',function(){
+                $('.addPage').css({'display':'none'});
+            });
+
+            $('.add-save').on('click',function(){
+                $('.addPage').css({'display':'none'});
+                $('.addSuccess').css({'display':'block'});
+
+                setTimeout(function(){
+                    $('.addSuccess').css({'display':'none'});
+                },1000);
+            });
+        })
+    </script>
+</body>
+</html>

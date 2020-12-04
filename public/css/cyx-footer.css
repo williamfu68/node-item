@@ -1,0 +1,44 @@
+.footer{
+    
+    margin-top: 20px;
+    width: 1347px;
+    height: 200px;
+    background-color: black;
+}
+.foot-top{
+    width: 760px;
+    height: 40px;
+    margin: 0 auto;
+    border-bottom: 1px dashed #fff;
+   
+}
+.foot-top>ul{
+    text-align: center
+}
+.foot-top li{
+    float: left;
+    padding:0 20px 0 20px;
+    height: 40px;
+    line-height: 40px;
+    
+}
+.foot-top li>a{
+    color: #fff;
+    font-size: 12px;
+}
+.footer>p{
+    color: rgb(232,232,232);
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+.foot-img{
+    width: 1347px;
+    height: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+.foot-img>img{
+    width: 100px;
+    height: 30px;
+}

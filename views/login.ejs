@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        
+        .login-wrap {
+            width: 1400px;
+            margin: 25px auto 0;
+        }
+        
+        .login-logo {
+            width: 200px;
+            height: 80px;
+            border: 1px solid #d6d6d6;
+            background: url(/img/banner.png) no-repeat center / cover;
+        }
+        
+        .login-content {
+            margin-top: 25px;
+        }
+        
+        .login-content-banner {
+            float: left;
+            width: 900px;
+            height: 500px;
+            border: 1px solid #d6d6d6;
+            background: url(/img/banner.png) no-repeat center / cover;
+        }
+        
+        .login-content-right {
+            position: relative;
+            float: right;
+            width: 450px;
+            height: 500px;
+            border: 1px solid #d6d6d6;
+            padding: 60px 50px 0;
+            box-sizing: border-box;
+            box-shadow: 0 0 6px #ccc;
+            transition: all .3s;
+            background-color: #fff;
+        }
+        
+        .login-content-right:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+        }
+        
+        .login-header-text {
+            float: left;
+            color: #333;
+        }
+        
+        .login-header-regist {
+            float: right;
+        }
+        
+        .login-header-regist::after {
+            content: '\00A0\00BB';
+        }
+        
+        .form-group {
+            position: relative;
+        }
+        
+        .form-group input {
+            width: 100%;
+            outline: none;
+            height: 40px;
+            border: 1px solid #d6d6d6;
+            margin-top: 30px;
+            padding: 3px 6px;
+            box-sizing: border-box;
+            transition: all .3s;
+        }
+        
+        .form-group input:focus {
+            border-color: lightseagreen;
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+        }
+        
+        .password svg {
+            position: absolute;
+            right: 15px;
+            top: 45px;
+            cursor: pointer;
+        }
+        
+        .captcha {
+            width: 100%;
+        }
+        
+        .captcha-left {
+            float: left;
+        }
+        
+        .captcha-right {
+            float: right;
+            margin-top: 32px;
+        }
+        
+        #captcha {
+            display: inline-block;
+            width: 120px;
+            height: 36px;
+            background-color: #e4e4e4;
+            color: #333;
+            line-height: 36px;
+            text-align: center;
+            letter-spacing: 5px;
+            font-weight: 500;
+            user-select: none;
+            cursor: pointer;
+        }
+        
+        #refresh {
+            text-decoration: underline;
+        }
+        
+        .login-content-right-footer {
+            margin-top: 30px;
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        .footer-left {
+            float: left;
+        }
+        
+        .footer-left input {
+            vertical-align: middle;
+        }
+        
+        .footer-left-text {
+            color: #333;
+        }
+        
+        .footer-right {
+            float: right;
+        }
+        
+        .login-btn {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            outline: none;
+            border: 1px solid #d6d6d6;
+            background-color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 5px;
+            margin-top: 30px;
+            cursor: pointer;
+            background-color: lightseagreen;
+            color: #fff;
+            transition: all .3s;
+        }
+        
+        .hint {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #c90000;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-wrap">
+        <div class="login-logo"></div>
+        <div class="login-content clear">
+            <div class="login-content-banner"></div>
+            <div class="login-content-right">
+                <div class="hint"></div>
+                <div class="login-content-right-header clear">
+                    <span class="login-header-text">登录某商城</span>
+                    <a href="/users/regist" class="login-header-regist">注册账号</a>
+                </div>
+                <div class="login-content-right-body">
+                    <form autocomplete="off">
+                        <div class="form-group">
+                            <input type="text" id="username" placeholder="请输入登录帐号">
+                        </div>
+                        <div class="form-group password">
+                            <input type="password" id="password" placeholder="请输入登录密码">
+                            <svg class="bi bi-eye-slash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
+                                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299l.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
+                                <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709z"/>
+                                <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+                            </svg>
+                            <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
+                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                            </svg>
+                        </div>
+                        <div class="form-group captcha clear">
+                            <div class="captcha-left">
+                                <input type="text" id="captchaInput" placeholder="验证码">
+                            </div>
+                            <div class="captcha-right">
+                                <div id="captcha"></div>
+                                <a href="#" id="refresh">刷新</a>
+                            </div>
+                        </div>
+                        <div class="login-content-right-footer clear">
+                            <div class="footer-left">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="footer-left-text">自动登录</span>
+                                </label>
+                            </div>
+                            <div class="footer-right">
+                                <a href="/users/forgetPassword">忘记密码？</a>
+                            </div>
+                        </div>
+                        <button type="button" class="login-btn" id="loginBtn">登录</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery-1.11.1.js"></script>
+    <script>
+        $(function() {
+            var captcha; // 验证码
+            var flag = true; // 判断密码框 type属性状态
+            // 刷新验证码
+            $("#refresh").on('click', function(e) {
+                    e.preventDefault();
+                    createCaptcha();
+                    console.log(captcha);
+                })
+                // 添加键盘监听事件
+            $(document).on('keyup', function(e) {
+                    if (e.keyCode === 13) {
+                        $('#loginBtn').click();
+                    }
+                })
+                // 点击小眼睛切换密码框 type属性
+            $(".password svg").on('click', function() {
+                    if (flag) {
+                        $(this).hide(300).siblings('svg').show(300).siblings('input').attr('type', 'text');
+                        flag = false;
+                    } else {
+                        $(this).hide(300).siblings('svg').show(300).siblings('input').attr('type', 'password');
+                        flag = true;
+                    }
+                })
+                // 点击刷新验证码
+            $('#captcha').on('click', function() {
+                createCaptcha();
+            })
+            createCaptcha();
+
+            function createCaptcha() {
+                captcha = ''; // 每次生成验证码时先清空掉原来的值
+                var arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+                var captchaLength = 4;
+                var arrLength = arr.length;
+                for (i = 0; i < captchaLength; i++) {
+                    var randomIndex = Math.floor(Math.random() * arrLength);
+                    captcha += arr[randomIndex];
+                }
+                $('#captcha').text(captcha);
+            }
+
+            // 判断表单内容是否为空
+            $('#loginBtn').on('click', function() {
+                var $username = $('#username').val().trim();
+                var $password = $('#password').val().trim();
+                var $captcha = $('#captchaInput').val().trim().toUpperCase();
+
+                if ($username == '' || $password == '') {
+                    return $('.hint').text('账号或密码不能为空！');
+                } else if ($captcha == '') {
+                    $('#captchaInput').focus();
+                    return $('.hint').text('验证码不能为空！');
+                } else if ($captcha != captcha) {
+                    $('#captchaInput').val('');
+                    $('#captchaInput').focus();
+                    createCaptcha();
+                    return $('.hint').text('验证码错误！');
+                } else {
+                    $('.hint').empty();
+                    console.log(captcha);
+                    console.log('可以登录！');
+                    // 账号、密码、验证码都正确后发送 ajax请求
+                    $.ajax({
+                            url: '/users/tologin',
+                            method: 'post',
+                            data: {
+                                username: $username,
+                                password: $password
+                            }
+                        })
+                        .done(function(res) {
+                            // console.log('请求成功：', res);
+                            if (res.state === 200) {
+                                $('.hint').text(`登录成功！`);
+                                setTimeout(function() {
+                                    location.href = "/";
+                                }, 1000)
+                            } else {
+                                $('.hint').text('帐号或密码错误！');
+                                $('#username').val('');
+                                $('#password').val('');
+                                $('#captchaInput').val('');
+                                $('#captchaInput').blur();
+                                createCaptcha();
+                            }
+
+                        })
+                        .fail(function(err) {
+                            console.log('请求失败：', err);
+                        })
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>

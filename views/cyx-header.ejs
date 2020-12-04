@@ -1,0 +1,109 @@
+
+    <nav class="nav">
+        <ul>
+            <li class="list">
+                <span>
+                    收藏 | 送货至  山东<a href="">[更换]</a> 
+                </span>
+            </li>
+            <li class="list">
+                <span>您好，欢迎来到云农场！！</span>
+            </li>
+            <li class="list1">
+                <span>
+                    <a href="">个人中心 </a>|
+                    <a href=""> 我的订单 </a>|
+                    <a href=""> 购物车 </a>|
+                    <a href=""> 客服 </a>
+                </span>
+            </li>
+            <li class="list">
+                <span>
+                    <span class="phone">手机版</span> | 
+                    <span class="web"> 网站导航</span>
+                </span>
+            </li>
+        </ul>
+        <div class="phone-a"><h5>可扫描下方二维码登录账号</h5> <img src="img/erwei.jpg" alt=""></div>
+        <div class="web-a">
+            <div class="web-left">
+                <p>热门推荐</p>
+                <ul>
+                    <li><a href="">厂家直供</a></li>
+                    <li><a href="">测土配肥</a></li>
+                    <li><a href="">海外购</a></li>
+                    <li><a href="">农技中心</a></li>
+                    <li><a href="">品牌街</a></li>
+                    <li><a href="">个人中心</a></li>
+                </ul>
+            </div>
+            <div class="web-right">
+                <p>服务指南</p>
+                <ul>
+                    <li><a href="">帮助中心</a></li>
+                    <li><a href="">品质保障</a></li>
+                    <li><a href="">特色服务</a></li>
+                    <li><a href="">7天退换货</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="head">
+        <div class="contion1">
+            <img src="img/logo.png" alt="">
+            <span class="list">
+                <div class="input">
+                    <input type="text" placeholder="输入商品或店铺名称">
+                    <button>搜索</button>
+                </div>
+                <div>
+                    热门搜索：
+                    <a href="">蔬菜种子</a>
+                    <a href="">瓜果种子</a>
+                    <a href="">大田作物</a>
+                    <a href="">复（混）合肥</a>
+                    <a href="">有机肥</a>
+                    <a href="">冲施肥</a>
+                </div>
+            </span>
+            <span class="gou">
+                <a href=""><div>我的购物车</div></a>
+            </span>
+        </div>
+        <div class="contion2">
+            <div class="tli">商品服务分类</div>
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/chang">厂商直供</a></li>
+                <li><a href="/ce">测土配肥</a></li>
+                <li><a href="/hai">海外购</a></li>
+                <li><a href="">农技中心</a></li>
+                <li><a href="">品牌街</a></li>
+                <li><a href="">为什么选择本商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="/js/jquery-1.11.1.js"></script>
+    
+    <script>
+        var m = 1;
+        $('.phone').on('click',function() {
+            if(m){
+                $('.phone-a').css('display','block');
+                m = 0;
+            }else{
+                $('.phone-a').css('display','none');
+                m = 1;
+            }
+        })
+        $('.web').on('click',function() {
+            if(m){
+                $('.web-a').css('display','block');
+                m = 0;
+            }else{
+                $('.web-a').css('display','none');
+                m = 1;
+            }
+        })
+    </script>

@@ -1,0 +1,83 @@
+<%- include('doctype') -%>
+
+    <style>
+        .body {
+            padding: 40px 100px;
+            background-color: #fff;
+        }
+        
+        .body-wrap {
+            min-height: 410px;
+            border: 1px solid #d6d6d6;
+        }
+        
+        .body-title {
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-top: 60px;
+        }
+        
+        .body-content {
+            width: 500px;
+            text-align: center;
+            margin: 100px auto 0;
+        }
+        
+        .body-content-link {
+            display: inline-block;
+            padding: 12px 40px;
+            margin-top: 60px;
+            background-color: #f4f6fa;
+            transition: all .3s;
+        }
+        
+        .body-content-link:hover {
+            color: #fff;
+            background-color: lightseagreen;
+        }
+        
+        .form-group {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .form-group input {
+            width: 220px;
+            outline: none;
+            height: 35px;
+            border: 1px solid #d6d6d6;
+            padding: 3px 6px;
+            box-sizing: border-box;
+            caret-color: teal;
+            transition: all .3s;
+        }
+        
+        .form-group input[type="checkbox"] {
+            width: auto;
+            height: auto;
+            vertical-align: middle;
+        }
+        
+        .form-group input:focus {
+            border-color: lightseagreen;
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+        }
+    </style>
+
+    <%- include('headbody') -%>
+
+        <%- include('header') -%>
+            <!-- body -->
+            <div class="body">
+                <div class="body-wrap">
+                    <h1 class="body-title">您的申请已提交，请耐心等待您的XXX的审核 您也可以电话联系某商城</h1>
+                    <div class="body-content">
+                        <p class="body-content-tel">客服电话：4004009876</p>
+                        <a href="/" class="body-content-link">去某商城首页</a>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('footer') -%>

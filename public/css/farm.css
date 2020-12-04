@@ -1,0 +1,130 @@
+.intro{
+    width:100%;
+    height:60px;
+    border-bottom:1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.update{
+    width:100px;
+    height:20px;
+    text-align: center;
+    border:1px solid #ccc;
+    color: #666;
+    border-radius: 5px;
+    padding:5px 10px;
+    cursor: pointer;
+}
+
+.updatePage,.addPage{
+    position:absolute;
+    top:80px;
+    left:50%;
+    transform: translateX(-50%);
+    width:600px;
+    height:250px;
+    border:1px solid #999;
+    background:#fff;
+    border-radius: 5px;
+    padding:30px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.updateSuccess,.addSuccess{
+    position: absolute;
+    top:220px;
+    left:50%;
+    transform: translateX(-50%);
+    width:200px;
+    text-align: center;
+    border-radius: 5px;
+    background:#666;
+    padding:10px 20px;
+    color:#fff;
+    display: none;
+}
+
+.options{
+    width: 100%;
+    height: 40px;
+}
+
+.options input{
+    margin-left:10px;
+    color: #333;
+}
+.other input{
+    margin-left:80px;
+}
+
+.other input{
+    padding:5px 0;
+}
+.addPage input{
+    width:200px;
+    height:20px;
+    padding:5px 0;
+}
+
+
+.options select{
+    margin-left:10px;
+    height:30px;
+}
+
+.other input,.options input[type="text"],.options select,.options input[type="number"]{
+    border:1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.options input[type="number"]{
+    width:100px;
+    height:20px;
+    padding:5px 0;
+}
+
+.operation{
+    width: 100%;
+    margin-top:60px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.update-save,.update-cancel,.add-save,.add-cancel{
+    color:#666;
+    padding:5px 25px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.add-farm{
+    position: absolute;
+    top:70px;
+    right:30px;
+    padding:5px 10px;
+    border:1px solid #ccc;
+    color: #666;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.farm-content table{
+    width:800px;
+    margin:50px auto;
+}
+
+.farm-content table,th,td{
+    height: 30px;
+    border-collapse: collapse;
+    border:1px solid #333;
+    text-align: center;
+}
+
+.farm-content span,.farm-content td:nth-child(2n){
+    color:#666;
+}

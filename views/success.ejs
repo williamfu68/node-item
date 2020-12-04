@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/css/style.css' />
+  <link rel="stylesheet" href="/css/success.css">
+</head>
+<body>
+  <div class="main">
+    <h4 class="title">我的余额</h4>
+    <div class="container">
+      <img src="/img/money.jpg" alt="图片不存在">
+      <h5>恭喜您，充值成功！</h5>
+      <a href="/balance" id="show">查看余额</a>
+    </div>
+  </div>
+
+  <script src="/js/jquery-1.11.1.js"></script>
+  <script>
+    // 查询余额
+    $('#show').on('click', function(){
+
+      $.ajax({
+        url: '/success/show',
+        method: 'GET',
+      })
+      .done(function(res){
+        if(res.state === '200'){
+          render(res.data);
+        }
+      })
+      .fail(function(err){
+        console.log(err);
+        alert('获取数据失败！');
+      });
+    });
+  </script>
+</body>
+</html>

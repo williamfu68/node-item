@@ -1,0 +1,193 @@
+            <%- include('ly-header') -%>
+            <%- include('menu') -%>
+            <div class="content">
+                <div class="title">
+                    <h4>个人资料</h4>
+                </div>
+                <div class="info">
+                    <div class="face-box">
+                        <p>
+                            <span class="label">头像：</span>
+                            <div class="face"></div>
+                            <div class="face-text">编辑头像</div>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <span class="require">*</span>
+                            <span class="label">昵称：</span>
+                            <input type="text" value="砸牛顿的苹果">
+                            <span class="hidden-text">4-20为字符，支持汉字、字母、数字"-"、"_"组合</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <span class="label">性别：</span>
+                            <label>
+                                <input type="radio" name="gender">男
+                            </label>
+                            <label>
+                                <input type="radio" name="gender">女
+                            </label>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <span class="label">真实姓名：</span>
+                            <input type="text" value="砸牛顿的苹果" placeholder="请输入用户名">
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <span class="label">身份证号：</span>
+                            <input type="number" min="" max="">
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <span class="label">出生日期：</span>
+                            <select>
+                                <option value="">1900</option>
+                                <option value="">1901</option>
+                                <option value="">1902</option>
+                                <option value="">1903</option>
+                                <option value="">1904</option>
+                                <option value="">1905</option>
+                                <option value="">1906</option>
+                                <option value="">1907</option>
+                                <option value="">1908</option>
+                                <option value="">1909</option>
+                            </select>
+                            <span>年</span>
+                            <select>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                            </select>
+                            <span>月</span>
+                            <select>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                                <option value="">13</option>
+                                <option value="">14</option>
+                                <option value="">15</option>
+                                <option value="">16</option>
+                                <option value="">17</option>
+                                <option value="">18</option>
+                                <option value="">19</option>
+                                <option value="">20</option>
+                                <option value="">21</option>
+                                <option value="">22</option>
+                                <option value="">23</option>
+                                <option value="">24</option>
+                                <option value="">25</option>
+                                <option value="">26</option>
+                                <option value="">27</option>
+                                <option value="">28</option>
+                                <option value="">29</option>
+                                <option value="">30</option>
+                                <option value="">31</option>
+                            </select>
+                            <span>日</span>
+                        </p>
+                    </div>
+                    <div class="save">
+                        <p>保存</p>
+                    </div>
+
+                    <div class="saveSuccess">
+                        <span>恭喜您，你的个人资料已保存成功~~</span>
+                    </div>
+                </div>
+
+                <div class="face-decision clear">
+                    <ul class="clear">
+                        <li><a href="">自定义头像</a></li>
+                        <li><a href="">系统头像</a></li>
+                    </ul>
+
+                    <div class="files">
+                        <input type="file">
+                        <span>仅支持JPG、JPEG、PNG图片文件，且文件小于1M，建议使用正方形图片</span>
+                    </div>
+                    <div class="items clear">
+                        <div class="face-item ">
+                            <div class="large-face"></div>
+                        </div>
+                        <div class="face-item">
+                            <div class="middle-face">100*100像素头像</div>
+                            <div class="small-face">50*50像素头像</div>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <span class="saveBtn">保存</span>
+                        <span class="cancelBtn">取消</span>
+                    </div>
+
+                    <div class="updateSuccess">
+                        <span>恭喜您，你的头像已保存成功~~</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer') -%>
+
+    <script src="/js/jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            $('.face-text').on('click',function(){
+                $(this).parent().parent().hide();
+                $(this).parent().parent().siblings().filter('.face-decision').show();
+            });
+
+            $('.cancelBtn').on('click',function(){
+                $(this).parent().parent().hide();
+                $(this).parent().parent().siblings().filter('.info').show();
+            });
+
+
+            $('.save').on('click',function(){
+                $('.saveSuccess').css({'display':'block'});
+
+                setTimeout(function(){
+                    $('.saveSuccess').css({'display':'none'});
+                },1000);
+            });
+
+            $('.saveBtn').on('click',function(){
+                $('.updateSuccess').css({'display':'block'});
+
+                setTimeout(function(){
+                    $('.updateSuccess').css({'display':'none'});
+                },1000);
+
+                setTimeout(function(){
+                    $('.face-decision').css({'display':'none'});
+                    $('.info').css({'display':'block'});
+                },2000);
+            })
+        })
+    </script>
+</body>
+</html>

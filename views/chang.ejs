@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>厂家直供</title>
+    <link rel='stylesheet' href='/css/cyx-header.css' />
+    <link rel='stylesheet' href='/css/chang.css' />
+    <link rel='stylesheet' href='/css/cyx-footer.css' />
+</head>
+<body>
+<%- include('cyx-header') -%>
+<div class="modle">
+    <p>首页>厂家特供</p>
+    <img src="/img/index7.jpg" alt="">
+    <div>
+        <div class="all-sp"><span class="sp1">肥料直供</sapn> <span class="sp2"> 查看更多</sapn></div>
+        <div class="goods-list"> </div>
+    </div>
+    <div>
+        <div class="all-sp"><span class="sp1">农药直供</sapn> <span class="sp2"> 查看更多</sapn></div>
+        <div class="goods-list"> </div>
+    </div>
+    <div>
+        <div class="all-sp"><span class="sp1">农机直供</sapn> <span class="sp2"> 查看更多</sapn></div>
+        <div class="goods-list"> </div>
+    </div>
+    
+    <div class="pages">
+        <button type="button" id="prev-btn">&lt;</button>
+    
+        <button type="button" id="next-btn">&gt;</button>
+    </div>
+</div>
+
+
+<%- include('cyx-footer') -%>
+<script>
+    $(function () {
+        var currentPage = 1;
+
+        function getListData() { // 用于请求数据的
+            $.ajax({
+                    url: '/chang/list',
+                    method: 'GET',
+                    data: {
+                        currentPage: currentPage,
+                        pageSize: 4,
+                    }
+                })
+                .done(function (res) {
+                    if (res.state === '200') {
+                        render(res.data);
+                        // console.log('数据', res.data);
+                        types();
+                        brand();
+                    }
+                })
+                .fail(function (err) {
+                    // console.log('获取数据失败：', err);
+                });
+        }
+
+        getListData();
+        types();
+        brand();
+        function render(data) { // 用于渲染 DOM
+            var list = data.list;
+            // console.log('data.list:', data);
+            $('.pagenum').remove();
+            $('.goods-list').empty();
+            $('.type').empty();
+            $('.brand').empty();
+            $('.po-right').empty();
+            var cnt = data.count[0].cnt;
+            var len = cnt;
+            window.len = len; 
+            for ( var i = 1; i < (len / 4) + 1;i++ ) {
+                var $pages = `<span class = 'pagenum'>${i}</span>`;
+                $('#next-btn').before($pages);
+            }
+            $('.pagenum').on('click',function() {
+                currentPage = $(this).text();
+                getListData();
+                console.log(currentPage);
+            })
+            var $cnt = `<span>共${cnt}件商品</span>`
+            // console.log('数据条数', cnt);
+            $('.po-right').append($cnt);
+            var brand = data.brand;
+            var type = data.type;
+            // console.log('种类:', data.type);
+            for (var i = 0; i < type.length; i++) {
+                var $type = `<li><a class="s_type" href='javascript:;'>${type[i].g_type}</a></li>`;
+                $('.type').append($type);
+            }
+
+            for (var i = 0; i < brand.length; i++) {
+                var $brand = `<li><a class='s_brand' href="javascript:;">${brand[i].g_brand}</a></li>`;
+                $('.brand').append($brand);
+            }
+            for (var i = 0; i < list.length; i++) {
+                var str = list[i].g_face;
+                str = str.split(',');
+                console.log('str:',str);
+                var num;
+                if (list[i].g_num > 0) {
+                    num = '有货';
+                } else {
+                    num = '无货';
+                }
+                // console.log(i);
+                var $item = `
+                    <div class="article-item">
+                    <a href="/detail?id=${list[i].g_id}" class="article-link">
+                        <img class='goods-img' src='${str[0]}'>
+                        <h4 class="article-title">${list[i].g_name}</h4>
+                        <p>${list[i].g_weight} Kg</p>
+                        <p>￥${list[i].g_price}</p>
+                        <p>销量xxx</p>
+                        <p>${num}</p>
+                    </a>
+                    </div>
+                    `;
+                $('.goods-list').append($item);
+            }
+        }
+
+        function types() {
+            $('.s_type').on('click', function () {
+                var type = $(this).text();
+                // console.log(type);
+                $.ajax({
+                    url: '/chang/type',
+                    method: 'GET',
+                    data: {
+                        type: type,
+                        currentPage: currentPage,
+                        pageSize: 4
+                    }
+                })
+                .done(function(res) {
+                    if(res.state === '200') {
+                        render(res.data);
+                        // console.log('查询成功')
+                    }
+                })
+                .fail(function(err) {
+                    // console.log('获取数据失败：', err);
+                })
+            })
+        }
+        function brand() {
+            $('.s_brand').on('click', function () {
+                var brand = $(this).text();
+                // console.log(type);
+                $.ajax({
+                    url: '/chang/brand',
+                    method: 'GET',
+                    data: {
+                        brand: brand,
+                        currentPage: currentPage,
+                        pageSize: 4
+                    }
+                })
+                .done(function(res) {
+                    if(res.state === '200') {
+                        render(res.data);
+                        // console.log('查询成功')
+                    }
+                })
+                .fail(function(err) {
+                    // console.log('获取数据失败：', err);
+                })
+            })
+        }
+        // 上一页
+        $('#prev-btn').on('click', function () {
+            currentPage--;
+            if (currentPage < 1) {
+                currentPage = 1;
+            }
+
+            getListData();
+        })
+        // 下一页
+            $('#next-btn').on('click', function () {
+                console.log(len);
+            currentPage++;
+            if( currentPage >  len / 4 ) {
+                currentPage =  (len / 4);
+                
+            }
+            getListData();
+        }) 
+    });
+</script>
+
+</body>
+
+</html>

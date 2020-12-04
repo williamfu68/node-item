@@ -1,0 +1,240 @@
+body {
+    overflow: hidden;
+}
+.vip-start {
+    position: relative;
+    margin: auto;
+    width: 941px;
+    height: 620px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.vip-start-img {
+    width: 903px;
+    height: 370px;
+    border: 1px solid black;
+    margin: 15px auto;
+    background: url(../../img/vip.jpg) no-repeat;
+    background-size:100% 100%;
+}
+
+.vip-start a {
+    width: 100px;
+    display: block;
+    margin: 40px auto;
+}
+.vip-start-btn {
+    width: 100px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    height: 25px;
+    line-height: 25px;
+}
+
+/* 基础信息页面css */
+.vip-basics {
+    width: 941px;
+    height: 620px;
+    margin: 0 auto;
+    position: relative;
+}
+.vip-basics-top {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+.vip-basics-nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content:center;
+}
+
+.vip-basics-nav a {
+    width: 210px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    border: 1px solid #bbbbbb;
+    border-right: 0px;
+    text-align: center;
+}
+.vip-basics-nav-con{
+    display: flex;
+    justify-content: space-around;
+}
+.vip-basics-nav-con div:nth-child(1){
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 50%;
+    line-height: 20px;
+    background-color: #bbbbbb;
+}
+.vip-basics-nav a:nth-child(3){
+    border-right: 1px solid #bbbbbb;
+}
+.vip-basics-nav a:nth-child(1){
+    background-color: cadetblue;
+}
+
+.vip-basics-con-div1{
+    margin-top: 20px;
+}
+.vip-basics-con-div1 div{
+    width: 130px;
+    text-align: right;
+    display: inline-block;
+}
+/* 三级联动 */
+.vip-basics-con input{
+    outline:none;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #bbbbbb;
+}
+.vip-basics-con-put1 {
+    width: 200px;
+}
+.vip-basics-con-put2{
+    display: block;
+    margin-top: 10px;
+    width: 400px;
+    margin-left: 136px;
+}
+
+
+.xx{
+    text-indent:10px
+}
+
+.vip-basics-con-put3 input{
+    vertical-align: middle;
+}
+.vip-basics-con-a {
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.alerterr{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    color: red;
+    background-color: coral;
+    transform: translateY(-50px);
+    opacity:1;
+    transition:all 0.5s;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.alerterr span:nth-child(1){
+    font-size: 26px;
+}
+.alerterr span:nth-child(2){
+    font-size: 20px;
+    color:black;
+    position: absolute;
+    right: 50px;
+}
+
+
+/* 站点页面 */
+.vip-site {
+    width: 940px;
+    height: 500px;
+    margin: 0 auto;
+}
+.vip-site-con {
+    width: 740px;
+    height: 210px;
+    margin:100px auto;
+    position: relative;
+}
+.vip-site-con-nav{
+    display: flex;
+}
+.vip-site-con-nav:hover{
+    cursor:pointer
+}
+.vip-site-con-nav div{
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 0.5px solid #bbbbbb;
+}
+
+.vip-site-con-nav div:nth-child(1){
+    background-color: cornflowerblue;
+}
+.vip-site-con-text-address select{
+    margin-right: 30px;
+}
+.vip-site-con-text div{
+    padding-top: 30px;
+    padding-bottom: 5px;
+    padding: 20px 10px;
+}
+.vip-site-con-text-num input{
+    outline: none;
+    height: 20px;
+}
+.vip-site-con-last{
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid black;
+}
+.vip-site-con-last a{
+    display: block;
+}
+.vip-site-con-text{
+    border: 1px solid black;
+    border-top: 0px;
+    width: 738px;
+    height: 269px;
+}
+.vip-site-con-text-none2{
+    display: none;
+}
+.vip-site-con-text-none2-number input{
+    outline: none;
+}
+.vip-site-con-text-none2-phone{
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+}
+.vip-site-con-text-none2-phone p:nth-child(2){
+    margin-top: 10px;
+}
+.vip-site-con-text-none2-number a{
+    display: inline-block;
+    text-align: center;
+    width: 60px;
+    height: 18px;
+    border: 1px solid black;
+}
+.vip-site-con-text-none3{
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    display: none;
+    margin: 0 auto;
+}

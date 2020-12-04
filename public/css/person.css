@@ -1,0 +1,184 @@
+.content{
+    position: relative;
+    position: absolute;
+    left:230px;
+    width:1000px;
+    height:550px;
+    border:1px solid #333;
+    float: left;
+}
+
+.content .title{
+    width:100%;
+    height:50px;
+    line-height: 50px;
+    border-bottom:1px solid #333;
+    color:#333;
+    padding-left:20px;
+    box-sizing: border-box;
+}
+
+.new-address{
+    position: absolute;
+    top:0;
+    left:888px;
+    width:100px;
+    height:30px;
+    line-height: 30px;
+    margin:10px 0;
+    text-align: center;
+    padding:0 5px;
+    color: #666;
+    border:1px solid #333;
+    border-radius: 5px;
+}
+
+.info{
+    width: 900px;
+    height: auto;
+    margin:0 auto;
+    line-height:40px;
+}
+
+.info input[type="text"],.info input[type="number"]{
+    width:200px;
+    height:30px;
+    line-height: 30px;
+    outline: none;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding:0 10px;
+}
+
+.face-box{
+    position: relative;
+}
+
+.face{
+    width:80px;
+    height:80px;
+    background:#dbdada;
+    display: block;
+}
+
+.face-text{
+    position: absolute;
+    left:0;
+    bottom:0px;
+    width:80px;
+    height:40px;
+    text-align: center;
+    color:#fff;
+    background:rgba(102, 99, 99, 0.335);
+    cursor: pointer;
+}
+
+.hidden-text{
+    display: none;
+}
+
+.save p{
+    width:80px;
+    height:30px;
+    margin-top:50px;
+    line-height: 30px;
+    text-align:center;
+    margin-left:30px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+}
+
+.face-decision{
+    width: 900px;
+    height: auto;
+    margin:20px auto;
+    display: none;
+}
+
+.face-decision li>a{
+    float: left;
+    color:#666;
+    margin-right:30px;
+    padding:0 10px;
+    border-right:1px solid #666;
+}
+
+.face-decision li:last-child>a{
+    float: left;
+    color:#666;
+    margin-right:30px;
+    padding:0 10px;
+    border-right:none;
+}
+
+.files{
+    margin:30px 8px;
+}
+.files span{
+    margin-left:0;
+}
+
+.face-item{
+    width:350px;
+    height:200px;
+    border-right:1px solid #666;
+    padding:20px;
+    float: left;
+    margin-right:30px;
+}
+.face-item:last-child{
+    border-right:none;
+}
+
+.large-face,.middle-face,.small-face{
+    margin:auto;
+    border:1px solid #666;
+}
+
+.large-face{
+    width:250px;
+    height: 200px;
+}
+
+.middle-face{
+    width:120px;
+    height: 120px;
+    margin-top:30px;
+    float: left;
+}
+.small-face{
+    width:100px;
+    height: 100px;
+    float: left;
+    margin-left:50px;
+    margin-top:40px;
+}
+
+.btn{
+    height:30px;
+    margin:50px auto;
+    text-align: center;
+}
+
+.saveBtn,.cancelBtn{
+    padding:10px 30px;
+    text-align: center;
+    border:1px solid #ccc;
+    color:#666;
+    border-radius: 5px;
+    margin:0 50px;
+}
+
+.saveSuccess,.updateSuccess{
+    position: absolute;
+    top:220px;
+    left:50%;
+    transform: translateX(-50%);
+    width:250px;
+    text-align: center;
+    border-radius: 5px;
+    background:#666;
+    padding:5px 20px;
+    color:#fff;
+    display: none;
+}

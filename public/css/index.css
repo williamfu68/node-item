@@ -1,0 +1,386 @@
+.main{
+    position: relative;
+    top: 230px;
+    left: 100px;
+    width: 1100px;
+    height: 482px;
+    margin: 0;
+}
+.part1{
+    width: 200px;
+    height: 481px;
+    background-color: rgb(242, 242, 242);
+    border: 1px solid;
+    float: left;
+}
+.part1>ul>li{
+    width: 200px;
+    height: 120px;
+    border-top: 1px solid;
+}
+.part1>ul>li:first-child{
+    border: 0;
+}
+.part1>ul>li>div{
+    padding: 10px 0 0 10px;
+}
+.part1>ul>li>div>img{
+    width: 25px;
+    height: 26px;
+    float: left;
+}
+.part1>ul>li>div>span{
+    font-weight: 600;
+    font-size: 20px;
+}
+.index-sp1{
+    padding:0 40px 0 40px;
+}
+.index-sp2{
+    cursor: pointer;
+}
+.index-ul{
+    padding: 10px 0 0 10px;
+}
+.index-ul>li{
+    display: inline-block;
+    width: 60px;
+}
+.index-ul>li>a{
+    font-size: 14px;
+    color: black;
+}
+.part2{
+    float: left;
+    width: 580px;
+    height: 480px;
+    margin-left: 10px;
+}
+.part2>img{
+    width: 580px;
+    height: 483px;
+}
+.part3{
+    float: left;
+    margin-left: 10px;
+    width: 290px;
+    height: 480px;
+}
+.part3-top{
+    border: 1px solid;
+    height: 180px;
+}
+.topdiv{
+    width: 250px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: rgb(242, 242, 242);
+    text-align: center;
+}
+.topdiv>span{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.part3-top>ul{
+    padding: 10px 0 0 15px;
+}
+.part3-top>ul>li{
+    width: 120px;
+    display: inline-block;
+    padding: 5px;
+}
+.part3-top>ul>li>a{
+    font-size: 14px;
+    color: black;
+}
+.part3-bottom{
+    border: 1px solid;
+    height: 290px;
+    margin-top: 10px;
+}
+.part3-bottom>img{
+    width: 150px;
+    height: 130px;
+    padding: 10px 0 0 60px;
+}
+.css1{
+    font-size: 14px;
+    width: 180px;
+    margin: 0 auto;
+}
+.css2{
+    position: relative;
+    font-size: 14px;
+    width: 180px;
+    margin: 0 auto;
+    font-weight: 700;
+}
+.css2>span:first-child{
+    font-size: 18px;
+    color: red;
+}
+.css2>span:last-child{
+    font-weight: 100;
+}
+.hr{
+    position: absolute;
+    top: 13px;
+    right: 22px;
+    width: 40px;
+    border: 1px solid;
+    font-weight: 100;
+}
+.right{
+    position: fixed;;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 700px;
+    background-color:rgba(68, 72, 81, 1);
+    z-index: 4;
+}
+.right>ul{
+    margin-top: 140px;
+}
+.right>ul>li{
+    margin-top: 20px;
+    cursor: pointer;
+}
+.top{
+    padding-top: 80px;
+}
+.yiru{
+    position: absolute;
+    top: 140px;
+    right: 30px;
+    width: 110px;
+    height: 40px;
+    display: none;
+}
+.span{
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    background-color: rgb(68, 72, 81);
+    color: white;
+}
+.yi-img{
+    position: absolute;
+    top: 12px;
+    right: 3px;
+}
+.yiru2{
+    position: absolute;
+    top: 204px;
+    right: 30px;
+    width: 110px;
+    height: 40px;
+    display: none;
+}
+.yiru3{
+    position: absolute;
+    top: 268px;
+    right: 30px;
+    width: 110px;
+    height: 40px;
+    display: none;
+}
+.yiru4{
+    position: absolute;
+    top: 332px;
+    right: 30px;
+    width: 110px;
+    height: 40px;
+    display: none;
+}
+.yiru5{
+    position: absolute;
+    top: 396px;
+    right: 30px;
+    width: 110px;
+    height: 40px;
+    display: none;
+}
+.yiru6{
+    position: absolute;
+    top: 540px;
+    right: 30px;
+    width: 110px;
+    height: 40px;
+    display: none;
+}
+.tishi{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    z-index: 3;
+    display: none;
+}
+.tii{
+    padding: 80px 0 0 120px;
+}
+.tui{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 18px;
+}
+.tip{
+    text-align: center;
+    font-size: 14px;
+    margin: 20px 0 20px 0;
+}
+.ti-bottom{
+    width: 210px;
+    margin: 0 auto;
+    border-top: 1px dashed ;
+    padding: 10px;
+  }
+.ti-bottom>button{
+    background-color: white;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(232, 232, 232);
+    cursor: pointer;
+}
+.hidpart{
+    position: absolute;
+    top: 0;
+    left: 202px;
+    width: 500px;
+    height: 200px;
+    background-color:rgb(232, 232, 232);
+    border: 1px solid;
+    display: none;
+}
+.hpleft{
+    width: 270px;
+    height: 200px;
+    border-right: 1px solid;
+    float: left;
+}
+.hpleft>li{
+    padding: 10px;
+}
+.hpleft span{
+    font-size: 18px;
+    font-weight: 700;
+}
+.hpright{
+    width: 225px;
+    height: 200;
+    display: inline-block;
+}
+.hpright>p{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.hpright>ul{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+.hpright li{
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+}
+.hpright li>a{
+    font-size: 14px;
+    color: black;
+}
+.nei{
+    position: relative;
+    top: 230px;
+    left: 100px;
+    width: 1100px;
+}
+.mod{
+    width: 1100px;
+    height: 300px;
+    clear: both;
+}
+.mod>p{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(240, 42, 16);
+    padding:20px ;
+}
+.tong{
+    width: 1050px;
+    height: 250px;
+    padding: 20px;
+    background-color: rgb(232, 232, 232);
+}
+.tong>li{
+    width: 200px;
+    height: 260px;
+    float: left;
+    transition: all 1s;
+    margin-right: 10px;
+}
+.tong>li>img{
+    width: 200px;
+    height: 260px;
+}
+.tong>li:hover{
+    background-color: #fff;
+}
+.tong>li>a>img{
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+}
+.banner{
+    width: 1090px;
+    height: 200px;
+    
+}
+.banner>a>img{
+    padding-top: 20px;
+    width: 1090px;
+    height: 180px;
+}
+.sty{
+    position: relative;
+    width: 1090px;
+    height: 355px;
+    margin-top: 40px;
+}
+.sty-top>span{
+    font-size: 20px;
+    color: rgb(240, 42, 16);
+    padding: 20px;
+    font-weight: 600;
+}
+.sty-top{
+    width: 1090px;
+    height: 25px;
+    padding: 20px;
+}
+.sty-top>ul{
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+.sty-top li{
+    float: left;
+    margin-right: 20px;
+}
+.sty-top li>a{
+    color: black;
+    font-size: 12px;
+}
+.dian{
+    height: 230px;
+}

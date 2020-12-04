@@ -1,0 +1,41 @@
+.account-info{
+    width:950px;
+    height: 400px;
+    margin:10px auto;
+    line-height: 50px;
+}
+
+.account-info label,.account-info span{
+    color:#666;
+}
+
+.account-info span{
+    margin:0 20px;
+}
+
+.account-info input[type="text"],.account-info input[type="number"]{
+    outline: none;
+    height: 30px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding:0 5px;
+}
+
+.address,.ID{
+    width: 300px;
+
+}
+
+.ID-label{
+    margin-left:70px;
+}
+
+.service-area p{
+    margin-left:70px;
+}
+
+.renew{
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding:2px 20px;
+}

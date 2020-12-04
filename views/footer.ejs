@@ -1,0 +1,232 @@
+<!-- footer -->
+<div class="footer">
+    <div class="footer-wrap">
+        <div class="top-row">
+            <div class="top-service">
+                <ul class="clear">
+                    <li>
+                        <a target="_blank" href="">
+                            <img src="https://fms.res.meizu.com/dms/2018/07/13/2c69bf7c-2d29-4fd4-852e-0aa497f36f51.png" alt="图片加载失败">
+                            <span>满80免运费</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="">
+                            <img src="https://fms.res.meizu.com/dms/2018/07/13/d28eac8b-b915-49dc-9dbd-80884a07d44f.png" alt="图片加载失败">
+                            <span>100+ 城市次日送达</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="">
+                            <img src="https://fms.res.meizu.com/dms/2018/07/13/b21f3e65-f7f4-4693-914c-c070faf96770.png" alt="图片加载失败">
+                            <span>7天无理由退货</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="">
+                            <img src="https://fms.res.meizu.com/dms/2018/07/13/1998f0da-a439-4e07-9736-e6a1c39fb0ae.png" alt="图片加载失败">
+                            <span>15天换货保障</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="">
+                            <img src="https://fms.res.meizu.com/dms/2018/07/13/420825c1-4763-436d-b3e1-721651ccc70c.png" alt="图片加载失败">
+                            <span>1年免费保修</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="">
+                            <img src="https://fms.res.meizu.com/dms/2018/07/13/1c5cfeff-1b35-499e-bc2a-1fd29305be69.png" alt="图片加载失败">
+                            <span>上门快修</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="top-contact">
+                <span>周一至周日 8:00-20:00</span>
+                <p>400-788-3333</p>
+                <a href="" target="_blank">在线客服</a>
+            </div>
+        </div>
+        <div class="bottom-row">
+            <div class="left-info">
+                <ul class="clear">
+                    <li><a target="_blank" href="">了解我们</a></li>
+                    <li><a target="_blank" href="">加入我们</a></li>
+                    <li><a target="_blank" href="">联系我们</a></li>
+                    <li><a target="_blank" href="">社区</a></li>
+                    <li><a target="_blank" href="">天猫旗舰店</a></li>
+                    <li><a target="_blank" href="">问题反馈</a></li>
+                    <li><a target="_blank" href="">线上销售授权名单公示</a></li>
+                    <li><a target="_blank" href="">出版物经营许可证</a></li>
+                    <li class="last">
+                        <span class="icon-lang">
+                    <a target="_blank" href="">
+                        <i></i>
+                        <span>简体中文</span>
+                        </a>
+                        </span>
+                    </li>
+                </ul>
+                <div class="left-copy">
+                    <span class="left-text">&copy; 2020 Telecom Equipment Co.,Ltd. All rights reserved.</span>
+                    <a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">蜀ICP备13003602号</a>
+                    <a target="_blank" href="">合字B2-20170010 </a>
+                    <a target="_blank" href="">营业执照</a>
+                    <a target="_blank" href="">法律声明</a>
+                    <a class="right-text" target="_blank" href="">
+                        <span class="footer-info-record">
+                        <i></i>
+                    <span>蜀公网安备 44049102496009 号</span>
+                        </span>
+                    </a>
+                    <a class="footer-info-license" target="_blank" href="">
+                        <i></i>
+                    </a>
+                    <a class="footer-info-wel" target="_blank" href="">
+                        <i></i>
+                    </a>
+                    <a class="footer-info-trust" target="_blank" href="">
+                        <i></i>
+                    </a>
+                </div>
+            </div>
+            <div class="right-info">
+                <a href="" target="_blank" class="subscribe-img1">
+                    <i></i>
+                </a>
+                <a href="" target="_blank" class="subscribe-img2">
+                    <i></i>
+                </a>
+                <a href="" target="_blank" class="subscribe-img3">
+                    <i></i>
+                </a>
+                <a href="" target="_blank" class="subscribe-img4">
+                    <i></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-1.11.1.js"></script>
+<script src="/js/distpicker.data.js"></script>
+<script src="/js/distpicker.min.js"></script>
+<script>
+    $(function() {
+        var $type = []; // 存储 us种植种类
+        // 当送货地址失去焦点时，如果文本框内容为空，则设置默认内容
+        $('.header-customer-address').on('blur', function() {
+            if ($(this).val().trim() == '') {
+                $(this).val('成都');
+            }
+        });
+
+        // 顶部 tab栏切换
+        $('.header-footer li').on('click', function(e) {
+            $(this).children('a').addClass('active').parent().siblings('li').children('a').removeClass('active');
+        });
+
+        // 获取并设置注册时间
+        if (location.href.split('=')[1]) {
+            console.log(location.href.split('=')[1]);
+            var $datetime = location.href.split('=')[1].split('.')[0];
+            var $date = $datetime.split('T')[0];
+            // var $time = $datetime.split('T')[1].split(':')[1] + ':' + $datetime.split(':')[2];
+            $date = $date.split('-')[0] + ' 年' + ' ' + $date.split('-')[1] + ' 月' + ' ' + $date.split('-')[2] + ' 日';
+            $('.body-time').text('注册时间：' + $date);
+        };
+
+        // 初始化省市区联动插件
+        $('#target').distpicker();
+
+        // us / lc内容区 tab栏切换
+        $('.switch-tags li').on('click', function() {
+            $(this).addClass('active').siblings('li').removeClass('active');
+            $(".switch-content").eq($(this).index()).show().siblings('div').hide();
+        });
+
+        // 根据复选框选中状态添加或移除样式
+        $('.order-box-checked').on('click', function() {
+            if (!$(this).is(':checked')) {
+                $('.order-address-box').first().css({
+                    borderColor: '#d6d6d6'
+                })
+                $('.order-box-option').fadeToggle();
+            } else {
+                $('.order-address-box').first().css({
+                    borderColor: '#00c3f5'
+                })
+                $('.order-box-option').fadeToggle();
+            }
+        });
+
+        // 控制 lc 点击"同时申请成为村级服务站"区域对应内容的显示与隐藏
+        $('.form-group #apply').on('click', function() {
+            $(this).parent().siblings().fadeToggle();
+        });
+        // 把种植类型 push到数组里
+        $('.type label').on('click', function() {
+            $type.push($(this).children('span').text());
+        });
+        // 检测编号是否为空
+        $('#check-btn').on('click', function() {
+            if ($('#villageNumber').val().trim() == '') {
+                return alert('编号不能为空！');
+            } else {
+                var $villageNumber = $('#villageNumber').val();
+                console.log('可以发送请求！');
+            }
+        });
+        // 点击按钮发送请求完善客户资料
+        $('.save-btn').on('click', function() {
+            var $name = $('#name').val();
+            var $IDNumber = $('#IDNumber').val();
+            var $birthday = $('#birthday').val();
+            var $area = $('#area').val();
+            var $otherType = $('#other-type').val().trim();
+            if (!$otherType == '') {
+                $type = [];
+                $type.push($otherType);
+            } else {
+                $type = unique($type);
+            }
+            var $detailAddr = $('.distpicker-one option:selected').text() + $('#detailAddr').val();
+            var $villageAddr = $('.distpicker-two option:selected').text() + $('#villageAddr').val();
+
+            function unique(arr) { // 去掉重复的 vs种植种类
+                for (var i = 0; i < arr.length; i++) {
+                    for (var j = i + 1; j < arr.length; j++) {
+                        if (arr[i] == arr[j]) {
+                            arr.splice(j, 1);
+                            j--;
+                        }
+                    }
+                }
+                return arr;
+            }
+            $.ajax({
+                    url: '/info/usInfo',
+                    method: 'get',
+                    data: {
+                        name: $name,
+                        IDNumber: $IDNumber,
+                        birthday: $birthday,
+                        area: $area,
+                        type: $type,
+                        detailAddr: $detailAddr,
+                        villageAddr: $villageAddr
+                    }
+                })
+                .done(function(res) {
+                    console.log(res);
+                    // location.href = '/users/info/complete';
+                })
+                .fail(function(err) {
+                    console.log(err);
+                })
+        })
+    })
+</script>
+</body>
+
+</html>

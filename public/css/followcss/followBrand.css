@@ -1,0 +1,35 @@
+.flwBrand-item{
+    width: 260px;
+    float: left;
+    position: relative;
+    top: 18%;
+}
+.flwBrand-item-img{
+    height: 210px;
+    background-color: teal;
+}
+.flwBrand-item-img img{
+    width: 100%;
+    height: 100%;
+}
+.flwBrand-item-text {
+    margin-top: 20px;
+}
+.flwBrand-item-text-caozuo span {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    font-weight: 400;
+}
+.flwBrand-item-text-caozuo span:nth-child(1){
+    width: 63%;
+    border-right: 0.8px solid #bbbbbb;
+}
+.flwBrand-item-text-caozuo span:nth-child(2){
+    width: 35%;
+}
+.flwBrand-item-text-caozuo {
+    margin-top: 10px;
+    text-align: center;
+    border: 0.8px solid #bbbbbb;
+}

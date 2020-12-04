@@ -1,0 +1,64 @@
+<%- include('doctype') -%>
+
+    <style>
+        .body {
+            padding: 40px 160px;
+            background-color: #fff;
+            min-height: 410px;
+        }
+        
+        .body-title {
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+        
+        .body-time {
+            text-align: right;
+            margin: 30px 0;
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        .body-content p {
+            margin-top: 25px;
+        }
+        
+        .body-subtitle {
+            padding: 25px 0;
+        }
+        
+        .body-content {
+            width: 500px;
+            margin: 100px auto 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .body-content-link {
+            display: inline-block;
+            padding: 12px 40px;
+            background-color: #f4f6fa;
+            transition: all .3s;
+        }
+        
+        .body-content-link:hover {
+            color: #fff;
+            background-color: lightseagreen;
+        }
+    </style>
+
+    <%- include('headbody') -%>
+
+        <%- include('header') -%>
+            <!-- body -->
+            <div class="body">
+                <h1 class="body-title">您已注册成功，欢迎加入某商城！</h1>
+                <h4 class="body-time"></h4>
+                <div class="body-content">
+                    <a href="" class="body-content-link">立即购物</a>
+                    <a href="/users/info/us" class="body-content-link">完善资料</a>
+                </div>
+            </div>
+
+            <%- include('footer') -%>

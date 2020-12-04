@@ -1,0 +1,138 @@
+        <%- include('ly-header') -%>
+        <%- include('menu') -%>
+            <div class="content">
+                <div class="title">
+                    <h4>收货地址</h4>
+                    <div class="new-address">
+                        <span>+添加新地址</span>
+                    </div>
+                </div>
+                <div class="address-item">
+                    <div class="address-info">
+                        <p>
+                            <h4>杜胜超  收</h4>
+                        </p>
+                        <p>北京市  北京市  朝阳区  建外街道办事处   秀水社区居委会  秀水A座4-301</p>
+                        <p>186****5700</p>
+                        <div class="default">
+                            <span>默认收货地址</span>
+                        </div>
+                    </div>
+                    <div class="editPageOne">
+                        <div class="contacts">
+                            <label>联系人：</label>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <label>居住地址：</label>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="detail-address">
+                            <input type="text" placeholder="详细地址">
+                        </div>
+                        <div>
+                            <label>联系电话：</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="edit-box">
+                        <div class="editone"><span>编辑</span></div>
+                    </div>
+                </div>
+                <div class="address-item">
+                    <div class="address-info">
+                        <p>
+                            <h4>杜胜超  收</h4>
+                        </p>
+                        <p>北京市  北京市  朝阳区  建外街道办事处   秀水社区居委会  秀水A座4-301</p>
+                        <p>186****5700</p>
+                    </div>
+                    <div class="editPageTwo">
+                        <div class="contacts">
+                            <label>联系人：</label>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <label>居住地址：</label>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                            <select>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="detail-address">
+                            <input type="text" placeholder="详细地址">
+                        </div>
+                        <div>
+                            <label>联系电话：</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="edit-box">
+                        <div class="edittwo"><span>编辑</span></div>
+                        <div class="set-default">设为<span>默认居住地址</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <%- include('footer') -%>
+
+    <script src="/js/jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            var state = false;
+            $('.editone').on('click',function(){
+                state = !state;
+                console.log(state);
+                if(state){
+                    $(this).text('完成')
+                    .parent().siblings().filter('.editPageOne').show();
+                    $(this).parent().siblings().filter('.address-info').hide();  
+                }else{
+                    $(this).text('编辑')
+                    .parent().siblings().filter('.editPageOne').hide()
+                    $(this).parent().siblings().filter('.address-info').show();
+                }
+            });
+            $('.edittwo').on('click',function(){
+                state = !state;
+                if(state){
+                    $(this).text('完成')
+                    .parent().siblings().filter('.editPageTwo').show();
+                    $(this).parent().siblings().filter('.address-info').hide();  
+                }else{
+                    $(this).text('编辑')
+                    .parent().siblings().filter('.editPageTwo').hide()
+                    $(this).parent().siblings().filter('.address-info').show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

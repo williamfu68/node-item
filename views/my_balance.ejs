@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/css/style.css' />
+  <link rel="stylesheet" href="/css/my_balance.css">
+</head>
+<body>
+  <div class="main">
+    <h4 class="title">我的余额</h4>
+    <div class="container1">
+      <div class="left">
+        <p>可用余额：0.00元</p>
+        <p class="text">为了保证您账户余额的安全，如需提现，请致电某商城客服进行申请和审核：4008 666 365</p>
+      </div>
+      <div class="right">
+        <a href="#" onclick="toggle()" >充值</a>
+      </div>
+    </div>
+
+    <div class="container2">
+      <span>日期</span>
+      <span>种类</span>
+      <span>类型：全部∨</span>
+      <span>金额</span>
+    </div>
+    <div class="non">暂无</div>
+
+    <div class="container3">
+      <form>
+        金额 <input type="text" id="txt" placeholder="请您输入充值金额：">
+        <div>
+          <a href="#" id="confirm">确认充值</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="/js/jquery-1.11.1.js"></script>
+  <script>
+    // 实现点击显示与隐藏
+    function toggle(){
+      var toggle = document.getElementsByClassName('container3')[0];
+      if(toggle.style.height === ""){
+        toggle.style.height = "200px";
+        toggle.style.border = "1px solid black";
+        toggle.style.overflow = "visible";
+        toggle.style.transition = "height 0.5s";
+      }else{
+        toggle.style.height = "0";
+        toggle.style.border = "0";
+        toggle.style.overflow = "hidden";
+        toggle.style.transition = "height 0.5s";
+        location.reload();
+      }
+    }
+
+
+    // 充值
+    $('#confirm').on('click', function(){
+      var money = $('#txt').val();
+
+      if(money == ''){
+        alert('请输入金额再充值！');
+      }
+
+      $.ajax({
+        url: '/balance/balances',
+        method: 'POST',
+        data: {
+          money: money
+        }
+      })
+      .done(function(res){
+        if(res.state === '200'){
+          location.href = '/success';
+        }else{
+          location.href = '/fail';
+        }
+      })
+      .fail(function(err){
+        console.log(err);
+        alert('服务器发生错误，请稍后重试！');
+      });
+    });
+  </script>
+</body>
+</html>

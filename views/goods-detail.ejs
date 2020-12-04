@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/goods-list.css">
+    <link rel="stylesheet" href="/css/ywk-footer.css">
+    <script src="/js/jquery-1.11.1.js"></script>
+    
+</head>
+<%- include('ywk-header') -%>
+
+<div class="detail">
+    <div class="goods-detail fl">
+        <div class="max">
+
+        </div>
+    </div>
+    <div class="com fl">
+        <h3 class="reco">-看了又看-</h3>
+    </div>
+</div>
+<div class="pro">
+    <div class="pro-title">
+        <div class="fl cur">商品介绍</div>
+        <div class="fl">商品参数</div>
+    </div>
+    <div class="tab-item on">
+        <pre class="canshu"">
+    美必施水溶肥是西班牙植物营养专家根据作物生长营养特点研制的全水溶复合肥料。
+
+    它的成份不仅含有水溶性的氮、磷、钾，还含有螯合态的钙、镁、锌、铁、锰、铜以及水溶性硼、钼等多种中微量元素。产品营养全面，配方科学，极易被作物吸收。
+
+    产品功效
+
+    均衡供应养分，调节作物营养生长和生殖生长的协调发展，增强作物抵抗逆境能力。
+
+    产品特点：
+
+    1、全水溶，无杂质，吸收利用率高，见效快，对作物安全；
+
+    2、欧盟标准，不含激素，安全绿色；
+
+    3、根据作物不同时期对养分需求设计配方，不仅含有大量元素氮磷钾，而且还有螯合态的微量元素，更易吸收，全面满足作物生长对养分的需求。
+
+    适用作物：黄瓜、番茄、西瓜、甜瓜、草莓、苹果、香蕉、葡萄、樱桃等
+
+    使用方法
+
+    叶面喷施：稀释800~1000倍，常规喷雾；整个生长周期均可使用，连续喷施2~3次，间隔7~10天，效果更佳；
+
+    滴灌：每亩3~5公斤；
+        </pre>
+    </div>
+    <div class="tab-item cs">
+        
+    </div>
+</div>
+<%- include('ywk-footer') -%>
+<script>
+    $(function () {
+        var search = location.search;
+        var id = search.split('=')[1];
+        console.log(id);
+        function getData() {
+            $.ajax({
+                url: '/goods-list/detail',
+                method: 'GET',
+                data: {
+                    id: id
+                }
+            })
+            .done(function (res) {
+                render(res.data);
+                console.log(res);
+            })
+            .fail(function (err) {
+                console.log(err);
+            });
+        }
+        function render(data) { // 用于渲染 DOM
+            console.log(data);
+            var reprice = data[0].g_price * 1.755;
+            reprice = reprice.toFixed(2)
+            var str = data[0].g_face;
+            str = str.split(',');
+            var $item = `
+                <div class="max">
+                </div>
+                <img class="g-face fl" src="${str[0]}" alt="">
+
+                <h2 class="goods-name fl">${data[0].g_name}</h2>
+                <div class="g-msg fl">
+                    <input class='g-type' type='hidden' value='${data[0].g_type}'>
+                    <p class="price">市场价：<span class="reprice">${reprice}</span></p>
+                    <p class="price">现价: <span class="price-n">${data[0].g_price}￥</span></p>
+                    <p>重量：${data[0].g_weight}kg/件</p>
+                    <p>生产日期：${data[0].g_date}</p>
+                    <p>库存:${data[0].g_num}<span class="fr">销量:xxxx</span></p>
+                    <p>数量：
+                        <button class="reduce" type="button">-</button>
+                        <input class="g-num" type="text" value="1">
+                        <button class="add" type="button">+</button>
+                    </p>
+                    <a href="" class="buy">立即购买</a>
+                    <a href="" class="shopcar">加入购物车</a>
+                </div>
+                <div class='small-img'>
+                    <img class='s-img' src = '${str[0]}'>
+                    <img class='s-img' src = '${str[1]}'>
+                    <img class='s-img' src = '${str[2]}'>
+                    <img class='s-img' src = '${str[3]}'>
+                </div>
+            `;
+            var $detail = `
+            <p>
+            <span class="ti">商品名称：</span>
+                ${data[0].g_name}
+            </p>
+            <p>
+                <span class="ti">商品种类：</span>
+                ${data[0].g_type} 
+            </p>
+            <p>
+                <span class="ti">商品品牌：</span>
+                ${data[0].g_brand}
+            </p>
+            <p>
+                <span class="ti">商品规格：</span>
+                ${data[0].g_weight}kg / 件
+            </p>
+            <p>
+                <span class="ti">出厂日期：</span>
+                ${data[0].g_date}
+            </p>
+            `;
+            $('.tab-item:eq(1)').append($detail);
+            $('.goods-detail').append($item);        
+            var $imgs = `
+                <div class='mask'></div>
+                <h1 class='tip'>--点击任意空白处关闭图片--</h1>
+                <img class='max-img' src=''>
+            `
+            $imgs = $.parseHTML($imgs);    
+            $('.s-img').on('click',function() {
+                $('.g-face').attr('src',$(this).attr('src'));
+            });
+            $('.g-face').on('click',function() {
+                $('.max').append($imgs);
+                $('.max-img').attr('src',$(this).attr('src'));
+                $('.mask').on('click',function() {
+                    $('.mask').parent().children().remove()
+                });
+            });
+            var type = $('.g-type').val();
+            console.log('查询到的种类为：',type);
+            window.type = type;
+            var num = 1;
+            $('.reduce').on('click', function () {
+                console.log(num);
+                num--;
+                $('.g-num').val(num);
+                if (num < 2) {
+                    num = 1;
+                    $('.g-num').val(num);
+                    console.log('不能再减了');
+                }
+            });
+            $('.add').on('click', function () {
+                num++;
+                $('.g-num').val(num);
+            });
+            // type = decodeURIComponent(type);
+            $.ajax({
+                url: '/goods-list/reco',
+                method: 'GET',
+                data: {
+                    type: type
+                }
+            })
+            .done(function (res) {
+                recoList(res.data);
+                console.log('推荐查询成功');
+                console.log(res);
+            })
+            .fail(function (err) {
+                console.log(err)
+            });
+        }
+        getData();
+        var buy = $('.buy').text();
+        console.log('cx:',buy);
+        
+
+        function recoList(data) {
+            for (var i = 0; i < data.length; i++) {
+                var str = data[i].g_face;
+                str = str.split(',');
+                console.log(str);
+                var $item = `
+                    <a href = '/detail?id=${data[i].g_id}'>
+                        <div class="g-list">
+                            <img src='${str[0]}'>
+                            <p class='reco-price'>${data[i].g_price}￥</p>
+                            <p>${data[i].g_name}</p>
+                        </div>
+                    </a>
+                `;
+                $('.com').append($item);
+            }
+        }
+        $('.pro-title div').on('click',function() {
+            $(this).siblings().removeClass('cur');
+            $('.tab-item').css('display', 'none');
+            $(this).addClass('cur');
+            $('.tab-item').eq($(this).index()).css('display', 'block');
+        })
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+/* 公共样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    /* background-color: #F4F6FA; */
+    color: #454748;
+}
+
+a {
+    /* color: #00B7FF; */
+    color: #1895fb;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+.clear::before,
+.clear::after {
+    content: '';
+    display: table;
+}
+
+.clear::after {
+    clear: both;
+}

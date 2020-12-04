@@ -1,0 +1,89 @@
+.container {
+    width: 1282px;
+    margin: 0 auto;
+}
+.left {
+    width: 200px;
+    border: 1px solid #666;
+    text-align: center;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+.left p {
+    border-bottom: 1px solid #666;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.left-list {
+    font-size: 13px;
+    line-height: 25px;
+}
+.left-list li {
+    border-bottom: 1px solid rgb(245, 240, 240);
+}
+.left-list a {
+    color: #777;
+}
+.li-title {
+    color: #000 !important;
+    font-size: 15px;
+    font-weight: bold;
+}
+.right {
+    width: 1075px;
+    margin-left: 5px;
+}
+.my-order {
+    font-weight: normal;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+}
+.saixuan {
+    overflow: hidden;
+    width: 100%;
+}
+.saixuan div {
+    float: left;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+.search-dd {
+    float: right !important;
+}
+table {
+    width: 100%;
+    text-align: center;
+    background: rgb(245, 245, 243);
+    border-top: 1px solid lightgray;
+}
+td ,th{
+    padding: 8px;
+    box-sizing: border-box;
+    border-bottom: 1px solid lightgray;
+}
+table img {
+    width: 50px;
+}
+.td-title {
+    background: #fff;
+    height: 10px;
+}
+.td-l {
+    border-left: 1px solid lightgray;
+}
+.td-r {
+    border-right: 1px solid lightgray;
+}
+.kb {
+    background: #fff;
+}
+.saixuan div {
+    cursor: pointer;
+}
+.del {
+    cursor: pointer;
+}
+#again {
+    cursor: pointer;
+}

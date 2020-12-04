@@ -1,0 +1,118 @@
+.container{
+    padding:0 70px;
+}
+
+.nav{
+    width:1300px;
+    height:40px;
+    background:#f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid #ccc;
+
+}
+
+.nav-item{
+    float: left;
+}
+
+.nav-item li{
+    float: left;
+    padding:0 10px;
+}
+
+.nav-item li:last-child{
+    border-right:none;
+}
+
+nav{
+    width:1160px;
+    height:80px;
+    margin:30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a,.navbar a{
+    color: #000;
+}
+
+.logo{
+    width:180px;
+    height:80px;
+    border:1px solid #999;
+    float: left;
+    margin-right:20px;
+}
+
+.ads{
+    width:80px;
+    height: 60px;
+    border:1px solid #999;
+    float: left;
+    margin-top:10px;
+}
+
+.search{
+    width: 600px;
+    height: 80px;
+}
+
+.search-box{
+    width:600px;
+    line-height: 40px;
+    background: #eee;
+}
+
+.search-box input{
+    width:500px;
+    height:30px;
+}
+
+.search-btn{
+    padding:5px 30px;
+    background: #ddd;
+}
+
+.hots{
+    width: 600px;
+    height: 20px;
+    margin-top:10px;
+}
+
+.hots-links li{
+    float: left;
+    margin-right:10px;
+}
+
+.navbar{
+    width:1160px;
+    height:50px;
+    margin:30px 0;
+    border-bottom:1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.classification{
+    width: 180px;
+    line-height: 50px;
+    border:1px solid #999;
+    border-bottom: none;
+    background:#efefef;
+    text-align: center;
+}
+
+.navbar-item{
+    width:1000px;
+    height: 50px;
+}
+
+.navbar-item li{
+    width: 130px;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+}

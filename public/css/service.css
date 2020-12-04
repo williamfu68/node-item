@@ -1,0 +1,30 @@
+.service{
+    margin-left:20px;
+}
+
+.service-info{
+    position: absolute;
+    top:90px;
+    left:30px;
+    width:100px;
+    text-align: right;
+}
+
+.service-info p,.info-detail p{
+    height:40px;
+    color:#999;
+}
+
+.info-detail{
+    position: absolute;
+    top:90px;
+    left:150px;
+    width:300px;
+}
+
+.contact{
+    position: absolute;
+    top:300px;
+    color:#999;
+    margin-left:30px;
+}

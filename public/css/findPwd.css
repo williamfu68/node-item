@@ -1,0 +1,243 @@
+body {
+    background-color: #fff;
+}
+
+.box {
+    min-width: 1200px;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo-wrapper {
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+
+.logo-wrapper div {
+    position: absolute;
+    bottom: 0;
+    width: 190px;
+    height: 72px;
+}
+
+.find-pwd {
+    border: 1px solid #ccc;
+    margin-top: 30px;
+}
+
+.step {
+    margin: 60px 0 80px;
+}
+
+.step ul {
+    display: flex;
+    justify-content: center;
+}
+
+.step li {
+    color: #d7d7d7;
+    border: 1px solid #ccc;
+    padding: 10px 70px;
+}
+
+.step li:nth-child(1),
+.step li:nth-child(2) {
+    border-right: none;
+}
+
+.step li span {
+    line-height: 30px;
+    margin-right: 10px;
+}
+
+.li-act {
+    color: #ffffff!important;
+    background-color: #66cc66;
+}
+
+.step-finish {
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 50%;
+}
+
+.input-content input {
+    outline: none;
+    border: none;
+    font-size: 18px;
+}
+
+.input-content li {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.mail {
+    padding: 15px 5px 15px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.msg-mail,
+.msg-pwd,
+.msg-yzm {
+    display: none;
+    font-size: 13px;
+    color: #ff0000;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.input-content .vercode {
+    padding: 0;
+    margin: 20px auto;
+}
+
+.codebox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vercode input {
+    width: 125px;
+    font-size: 18px;
+    text-align: center;
+    padding: 15px 0;
+    border: 1px solid #ccc;
+}
+
+.vercode .yanzm {
+    display: inline-block;
+    padding: 10px 35px;
+    background-color: #ccc;
+}
+
+.input-content button {
+    width: 100%;
+    border: 1px solid rgb(128, 128, 128);
+    padding: 15px 0;
+    background: none;
+    cursor: pointer;
+}
+
+.input-content .btn-hover:hover {
+    transition: all 0.1s;
+    background: #cccccc;
+}
+
+.input-content {
+    margin-bottom: 100px;
+}
+
+.step2,
+.step3 {
+    display: none;
+}
+
+.input-content .step2 li:nth-child(1) {
+    width: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.step2 li:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.step2 li .text-mail-code {
+    width: 90px;
+}
+
+.step2 li .get-mail-code {
+    border: 1px solid #ccc;
+    padding: 17px 5px;
+    color: #323232;
+    font-size: 14px;
+    border-radius: 15px;
+}
+
+.step2 li .mail-hover {
+    transition: all .15s ease;
+    background-color: #66cc66;
+    border: 1px solid #66cc66;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.step3 input.pwd::-webkit-input-placeholder {
+    font-size: 13px!important;
+}
+
+
+/* Firefox 18- */
+
+.step3 input.pwd:-moz-placeholder {
+    font-size: 13px!important;
+}
+
+
+/* Firefox 19+ */
+
+.step3 input.pwd::-moz-placeholder {
+    font-size: 13px!important;
+}
+
+.step3 input.pwd:-ms-input-placeholder {
+    font-size: 13px!important;
+}
+
+.step3 input.pwd {
+    width: 218px;
+}
+
+.step3 .confirm-pwd {
+    margin: 10px auto 50px;
+}
+
+
+/* 成功遮罩层 */
+
+.overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(47, 79, 79, .8);
+}
+
+.overlay .overlay-content {
+    width: 430px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.overlay .suss-tip,
+.overlay .re-login {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay .re-login {
+    margin-top: 50px;
+}
